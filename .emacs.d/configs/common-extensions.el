@@ -1,20 +1,28 @@
-(install-missing-packages '(auto-complete
-			    yasnippet
+(install-missing-packages '(;autocomplete
+			    auto-complete-etags
+			    yasnippet-snippets
 			    undo-tree
-			    browse-kill-ring
-			    smex
+			    ;browse-kill-ring
+			    ;smex
 			    key-chord
-			    ace-jump-mode
-			    dired+
-			    bookmark+
+			    ace-jump-buffer
+			    dired-details
+			    dired-dups
+			    dired-nav-enhance
+			    dired-quick-sort
+			    ;dired-sidebar
+			    dired-imenu
+			    dired-single
+			    dired-toggle-sudo
+			    ;bookmark+
 			    win-switch
 			    smartparens
-			    outline-magic
-;			    spray
+			    ;outline-magic
+			    ;spray
 			    paradox
-				bug-hunter
-;				dashboard
-			    ibuffer-git
+ 			    bug-hunter
+			    ;dashboard
+			    ibuffer-vc
 			    ibuffer-tramp))
 
 (add-to-list 'load-path "~/.emacs.d/extensions/outline-magic")
@@ -26,22 +34,22 @@
 ;(setq spray-margin-top 1)
 ;(setq spray-margin-left 1)
 
-; kill ring browser
-(require 'browse-kill-ring)
+;; kill ring browser
+;(require 'browse-kill-ring)
 
-; magic text folding
-(require 'outline-magic)
+;; magic text folding
+;(require 'outline-magic)
 
 ; alarm clock
 (require 'alarm)
 
 ; more bookmarking features like tags
-(require 'bookmark+)
-(setq bmkp-prompt-for-tags-flag nil)
+;(require 'bookmark+)
+;(setq bmkp-prompt-for-tags-flag nil)
 
-; M-x ido completion
-(require 'smex)
-(smex-initialize)
+;; M-x ido completion
+;(require 'smex)
+;(smex-initialize)
 
 ; git settings
 ; (setq magit-process-popup-time 3)
@@ -49,7 +57,7 @@
     (progn
       (install-missing-packages '(magit))
       (require 'magit)
-      (add-to-list 'load-path "~/.emacs.d/extensions/emacs-git-gutter")
+      ;(add-to-list 'load-path "~/.emacs.d/extensions/emacs-git-gutter")
       (require 'git-gutter)
       (global-git-gutter-mode t)))
 
@@ -64,20 +72,20 @@
 (add-hook 'python-mode-hook 'yas-minor-mode)
 (add-hook 'python-mode-hook 'auto-complete-mode)
 
-; auto-completion
-(require 'auto-complete)
-(setq ac-dwim t)
-(ac-config-default)
-(setq-default ac-sources '(ac-source-yasnippet
-			   ac-source-abbrev
-			   ac-source-dictionary
-			   ac-source-words-in-same-mode-buffers))
-(global-auto-complete-mode t)
+;; auto-completion
+;(require 'auto-complete)
+;(setq ac-dwim t)
+;(ac-config-default)
+;(setq-default ac-sources '(ac-source-yasnippet
+;			   ac-source-ev;
+;			   ac-source-dictionary
+;			   ac-source-words-in-same-mode-buffers))
+;global-auto-complete-mode t)
 
 ; flycheck - better syntax checking
 (if (>= emacs-major-version 25)
     (progn
-      (install-missing-packages '(flycheck))
+      (install-missing-packages '(flycheck-pycheckers))
       (require 'flycheck)
       (setq flycheck-pylintrc "~/.emacs.d/configs/pylint.rc")
       (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -104,20 +112,20 @@
 (setq undo-limit 50000)
 (setq undo-tree-visualizer-timestamps t)
 
-; better bookmarking support
-(add-to-list 'load-path "~/.emacs.d/extensions/bookmark-plus")
-(require 'bookmark+)
+;; better bookmarking support
+;(add-to-list 'load-path "~/.emacs.d/extensions/bookmark-plus")
+;(require 'bookmark+)
 
 ; activate ido and ibuffer mode
-(add-to-list 'load-path "~/.emacs.d/extensions/ibuffer-git")
-(add-to-list 'load-path "~/.emacs.d/extensions/ibuffer-tramp")
-(require 'ibuffer-git)
-(require 'ibuffer-tramp)
-(ido-mode t)
-(add-hook 'ibuffer-hook
-    (lambda ()
-      (ibuffer-tramp-set-filter-groups-by-tramp-connection)
-      (ibuffer-do-sort-by-alphabetic)))
+;add-to-list 'load-path "~/.emacs.d/extensions/ibuffer-git")
+;add-to-list 'load-path "~/.emacs.d/extensions/ibuffer-tramp")
+;require 'ibuffer-git)
+;require 'ibuffer-tramp)
+;ido-mode t)
+;add-hook 'ibuffer-hook
+;   (lambda ()
+;     (ibuffer-tramp-set-filter-groups-by-tramp-connection)
+;     (ibuffer-do-sort-by-alphabetic)))
 
 (setq ibuffer-formats
       '((mark modified read-only " "

@@ -68,15 +68,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(auth-source-save-behavior nil)
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
- '(org-agenda-files
-   (quote
-    ("~/organize/TODO.org" "~/organize/projekte.org" "~/organize/backlog.org" "~/organize/read.org")))
+ '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (eshell-autojump binclock pomidor auto-complete-distel edts yasnippet win-switch web-mode w3m use-package undo-tree try trr tex-smart-umlauts spray spotify smex smartparens robe restclient python-test pyimport pyflakes paradox outline-magic ob-ipython multishell multi-term magit key-chord jedi ibuffer-tramp ibuffer-git hy-mode helm-rhythmbox helm-recoll helm-emms gnuplot fooddice flycheck dired+ clojure-cheatsheet calfw browse-kill-ring bookmark+ axiom-environment ack ace-jump-mode ac-slime ac-math ac-cider)))
- '(send-mail-function (quote smtpmail-send-it)))
+    (calfw-org calfw-ical calfw-cal calfw yasnippet-snippets yaml-mode win-switch web-mode undo-tree tex-smart-umlauts smex smartparens python-pytest pyimport pyflakes paradox multi-term magit kill-ring-search key-chord jedi ibuffer-vc ibuffer-tramp git-gutter flycheck-pycheckers dired-toggle-sudo dired-toggle dired-single dired-rsync dired-quick-sort dired-nav-enhance dired-imenu dired-icon dired-git-info dired-explorer dired-dups dired-du dired-details bug-hunter browse-kill-ring auto-complete-nxml auto-complete-etags auto-complete-clang-async ansible-doc ansible ace-jump-mode ace-jump-buffer))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
