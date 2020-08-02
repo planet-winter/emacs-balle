@@ -103,9 +103,9 @@ in the current *Python* session."
 ;; manage python imports
 (if (>= emacs-major-version 25)
   (progn
-    (install-missing-packages '(pyimport python-test))
+    (install-missing-packages '(pyimport python-pytest))
     (require 'pyimport)
     (setq pyimport-pyflakes-path "/usr/bin/pyflakes")
 
     ;; run python unit tests from within emacs
-    (require 'python-test)))
+    (require 'python-pytest)))

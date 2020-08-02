@@ -1,13 +1,13 @@
 ; security settings
-(require 'tls)
-(require 'gnutls)
-(setq tls-checktrust t)
-(setq gnutls-verify-error t)
-(setq gnutls-min-prime-bits 2048)
-(setq network-security-level 'high)
-(setq tls-program
-      '("gnutls-cli -p %p --dh-bits=2048 --ocsp --x509cafile=%t \
---priority='SECURE192:+SECURE128:-VERS-ALL:+VERS-TLS1.2:%%PROFILE_MEDIUM' %h"))
+;(require 'tls)
+;(require 'gnutls)
+;(setq tls-checktrust t)
+;(setq gnutls-verify-error t)
+;(setq gnutls-min-prime-bits 2048)
+;(setq network-security-level 'high)
+;(setq tls-program
+;      '("gnutls-cli -p %p --dh-bits=2048 --ocsp --x509cafile=%t \
+;--priority='SECURE192:+SECURE128:-VERS-ALL:+VERS-TLS1.2:%%PROFILE_MEDIUM' %h"))
 
 ; disable menu-, tool- and scrollbar
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
