@@ -48,7 +48,7 @@ in the current *Python* session."
 	 (completion-table nil)
 	 completion
 	 (comint-preoutput-filter-functions
-x	  (append comint-preoutput-filter-functions
+         (append comint-preoutput-filter-functions
 		  '(ansi-color-filter-apply
 		    (lambda (string)
 		      (setq ugly-return (concat ugly-return string))
