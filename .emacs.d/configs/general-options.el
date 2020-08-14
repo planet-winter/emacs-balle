@@ -1,9 +1,10 @@
-; security settings
-;(require 'tls)
-;(require 'gnutls)
-;(setq tls-checktrust t)
-;(setq gnutls-verify-error t)
-;(setq gnutls-min-prime-bits 2048)
+;; security settings
+(require 'tls)
+(require 'gnutls)
+(setq tls-checktrust nil)
+(setq gnutls-verify-error nil)
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+(setq gnutls-min-prime-bits 2048)
 ;(setq network-security-level 'high)
 ;(setq tls-program
 ;      '("gnutls-cli -p %p --dh-bits=2048 --ocsp --x509cafile=%t \
@@ -26,7 +27,7 @@
       (append '((extended-command-history . 30)
                 (file-name-history        . 100)
                 (grep-history             . 30)
-               (compile-history          . 30)
+                (compile-history          . 30)
                 (minibuffer-history       . 50)
                 (query-replace-history    . 60)
                 (read-expression-history  . 60)
@@ -57,8 +58,8 @@
 
 ; package repositories
 (require 'package)
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "https://stable.melpa.org/packages/") t)
 
 

@@ -78,9 +78,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(put 'dired-find-alternate-file 'disabled nil)
 
 ;; fix https://lists.gnu.org/archive/html/info-gnu/2017-09/msg00006.html
 (eval-after-load "enriched"
     '(defun enriched-decode-display-prop (start end &optional param)
       (list start end)))
+(put 'dired-find-alternate-file 'disabled nil)

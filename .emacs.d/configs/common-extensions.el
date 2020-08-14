@@ -100,8 +100,8 @@
 (key-chord-mode 1)
 (setq key-chord-one-key-delay 0.15)
 
-; ace jump mode
-(require 'ace-jump-mode)
+;; ace jump mode
+;(require 'ace-jump-mode)
 
 ; easier window switching
 (require 'win-switch)
@@ -117,12 +117,12 @@
 ;(require 'bookmark+)
 
 ; activate ido and ibuffer mode
-;add-to-list 'load-path "~/.emacs.d/extensions/ibuffer-git")
-;add-to-list 'load-path "~/.emacs.d/extensions/ibuffer-tramp")
-;require 'ibuffer-git)
-;require 'ibuffer-tramp)
-;ido-mode t)
-;add-hook 'ibuffer-hook
+;(add-to-list 'load-path "~/.emacs.d/extensions/ibuffer-git")
+;(add-to-list 'load-path "~/.emacs.d/extensions/ibuffer-tramp")
+;(require 'ibuffer-git)
+;(require 'ibuffer-tramp)
+;(ido-mode t)
+;(add-hook 'ibuffer-hook)
 ;   (lambda ()
 ;     (ibuffer-tramp-set-filter-groups-by-tramp-connection)
 ;     (ibuffer-do-sort-by-alphabetic)))
